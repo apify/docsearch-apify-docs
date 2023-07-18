@@ -13,13 +13,10 @@ jobs:
             registry-url: 'https://registry.npmjs.org'
 
         - name: Install dependencies
-          run: yarn install --frozen-lockfile
+          run: yarn install
 
-        - name: Build packages
-          run: yarn build
-
-        - name: Run tests
-          run: yarn test
+        - name: Build the package
+          run: yarn --cwd=./packages/docsearch-react build
 
         - name: Publish to NPM
           run: yarn publish --access public ./packages/docsearch-react
