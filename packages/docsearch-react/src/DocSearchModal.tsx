@@ -303,7 +303,29 @@ export function DocSearchModal({
                 };
               }
 
-              return Object.values<DocSearchHit[]>(sources).map(
+              return Object.values<DocSearchHit[]>(sources)
+              .sort((a, b) => {
+                const pathnameA = (new URL(a[0].url)).pathname;
+                const pathnameB = (new URL(b[0].url)).pathname;
+
+                let { location: { pathname } } = window;
+
+                if(['/', ''].includes(pathname)) {
+                  pathname = '/academy';
+                }
+
+                const getLongestCommonPrefix = (a, b) => {
+                  return a.split('/').filter(Boolean).reduce((acc, curr, i) => {
+                    if (curr === b.split('/').filter(Boolean)[i]) {
+                      return acc + curr + '/';
+                    }
+                    return acc;
+                  }, '');
+                };
+                
+                return getLongestCommonPrefix(pathnameB, pathname).length - getLongestCommonPrefix(pathnameA, pathname).length;
+              })
+              .map(
                 (items, index) => {
                   return {
                     sourceId: `hits${index}`,
