@@ -1,0 +1,27 @@
+name: Release
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-node@v3
+          with:
+            node-version: 18.x
+            registry-url: 'https://registry.npmjs.org'
+
+        - name: Install dependencies
+          run: yarn install --frozen-lockfile
+
+        - name: Build packages
+          run: yarn build
+
+        - name: Run tests
+          run: yarn test
+
+        - name: Publish to NPM
+          run: yarn publish --access public ./packages/docsearch-react
+          env:
+            NODE_AUTH_TOKEN: ${{ secrets.APIFY_SERVICE_ACCOUNT_NPM_TOKEN }}

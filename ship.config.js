@@ -3,9 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const packages = [
-  'packages/docsearch-css',
   'packages/docsearch-react',
-  'packages/docsearch-js',
 ];
 
 module.exports = {

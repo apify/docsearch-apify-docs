@@ -1,3 +1,9 @@
+# Watch out!
+
+> This is a **fork of the DocSearch project**! It contains tweaks specific to the [Apify Docs](https://docs.apify.com/) search, so it's most likely not what you are looking for. If you want to use DocSearch on your website, please use the [original repository](https://github.com/algolia/docsearch).
+
+---
+
 # @docsearch/react
 
 React package for [DocSearch](http://docsearch.algolia.com/), the best search experience for docs.

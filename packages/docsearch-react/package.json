@@ -1,10 +1,10 @@
 {
-  "name": "@docsearch/react",
-  "description": "React package for DocSearch, the best search experience for docs.",
+  "name": "@apify/docsearch-apify-docs",
+  "description": "Customized DocSearch package by Algolia for use in Apify Docs.",
   "version": "3.5.1",
   "license": "MIT",
   "homepage": "https://docsearch.algolia.com",
-  "repository": "algolia/docsearch",
+  "repository": "apify/docsearch-apify-docs",
   "author": {
     "name": "Algolia, Inc.",
     "url": "https://www.algolia.com"
