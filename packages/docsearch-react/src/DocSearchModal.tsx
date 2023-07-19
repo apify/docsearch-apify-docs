@@ -370,6 +370,7 @@ export function DocSearchModal({
                             };
                           })
                         )
+                        .map(x => x.sort((a, b) => !a.__docsearch_parent ? -1 : !b.__docsearch_parent ? 1 : 0))
                         .flat();
                     },
                   };

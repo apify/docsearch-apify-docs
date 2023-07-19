@@ -1,7 +1,7 @@
 {
   "name": "@apify/docsearch-apify-docs",
   "description": "Customized DocSearch package by Algolia for use in Apify Docs.",
-  "version": "3.5.1",
+  "version": "3.5.2",
   "license": "MIT",
   "homepage": "https://docsearch.algolia.com",
   "repository": "apify/docsearch-apify-docs",
