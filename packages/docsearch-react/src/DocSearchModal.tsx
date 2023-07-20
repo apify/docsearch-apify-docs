@@ -322,8 +322,10 @@ export function DocSearchModal({
                     return acc;
                   }, '');
                 };
+
+                const isTheSameLang = (a, b) => Number(['js', 'python'].some(lang => (a.includes(lang) && b.includes(lang))));
                 
-                return getLongestCommonPrefix(pathnameB, pathname).length - getLongestCommonPrefix(pathnameA, pathname).length;
+                return getLongestCommonPrefix(pathnameB, pathname).length + 20 * isTheSameLang(pathnameB, pathname) - getLongestCommonPrefix(pathnameA, pathname).length - 20 * isTheSameLang(pathnameA, pathname);
               })
               .map(
                 (items, index) => {
